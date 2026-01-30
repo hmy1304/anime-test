@@ -25,6 +25,7 @@ svg.name {
 svg.name path {
     stroke-width: 3;
     stroke: #fff;
+    opacity: 0;
 }
 
 button.btn {

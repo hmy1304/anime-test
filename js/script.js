@@ -8,7 +8,21 @@ const tl = anime.timeline({
 
 btn.addEventListener("click", () => {
     nameDraw()
-    tl.add({
+})
+
+function nameDraw() {
+    anime({
+        targets:".name path",
+        strokeDashoffset: [anime.setDashoffset, 0],
+        duration:1000,
+        delay:function(el, i) {
+            return i*250
+        },
+        easing:"easeInOutSine",
+        opacity: 1
+    })
+
+    anime({
         targets:".circle path",
         strokeDashoffset: [anime.setDashoffset, 0],
         easing:"easeInOutSine",
@@ -30,17 +44,5 @@ btn.addEventListener("click", () => {
         loop:true,
         duration:10000
     })
-
-})
-
-function nameDraw() {
-    anime({
-        targets:".name path",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration:2000,
-        delay:function(el, i) {
-            return i*250
-        },
-        easing:"easeInOutSine"
-    })
 }
+
